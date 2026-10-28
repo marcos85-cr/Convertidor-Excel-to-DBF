@@ -101,9 +101,9 @@ columna del archivo Excel:
 
 ```text
 .
-├── convertidor_zonas_ho.py       # Aplicación de conversión
-├── zonas_ho_Puntarenas.xlsx      # Ejemplo de archivo de entrada
-├── zonas_ho_Puntarenas.dbf       # Ejemplo de archivo convertido
+├── convertidor.py       # Aplicación de conversión
+├── archivo.xlsx      # Ejemplo de archivo de entrada
+├── archivo.dbf       # Ejemplo de archivo convertido
 └── README.md                     # Documentación del proyecto
 ```
 
