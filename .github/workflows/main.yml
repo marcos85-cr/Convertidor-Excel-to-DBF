@@ -1,0 +1,28 @@
+name: Build Windows EXE
+
+on:
+  push:
+    branches: [ main, master ]
+
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Configurar Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.11'
+        
+    - name: Instalar dependencias
+      run: pip install PyQt6 pandas openpyxl dbf pyinstaller
+        
+    - name: Compilar ejecutable
+      run: pyinstaller --onefile --windowed convertidor_zonas_ho.py
+        
+    - name: Subir EXE como artefacto
+      uses: actions/upload-artifact@v4
+      with:
+        name: conversor-windows
+        path: dist/convertidor_zonas_ho.exe
